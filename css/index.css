@@ -1,0 +1,122 @@
+:root {
+  --bg-color: #E6F0EF;
+  --footer-color: #B6AAAB;
+  --font-color: #363333;
+  --table-bg-color: #DAE9E7;
+  --font-small: 13px;
+  --font-middle: 16px;
+  --font-big: 20px;
+}
+
+/*
+#E6F0EF
+#DAE9E7
+#C4DCD5
+#A8C5B9
+#B6AAAB
+#DCD1D1
+*/
+
+/*
+background-color : var(--bg-color);
+로 함수 선언 가능 :root(전역 함수 선언)
+변수명은 "--"+"함수명"으로 결정됨 
+*/
+
+
+/*전역 구간입니다.*/
+
+* {
+  color: var(--font-color);
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.inner {
+  max-width: 1260px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input {
+  background-color: transparent;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  display: none;
+}
+
+
+/* 제목 구간입니다.*/
+
+h1 {
+  padding: 30px;
+}
+
+/*이곳은 테이블구간입니다.*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid;
+}
+
+table tr.sub>td {
+  padding: 0;
+}
+
+table .save_td,
+.save_th {
+  width: 10%;
+}
+
+table .save_td input {
+  padding: 25px;
+  border-radius: 20px;
+}
+
+table th,
+td {
+  border: 1px solid;
+  padding: 20px;
+}
+
+
+table .napxme {
+  background-color: var(--table-bg-color);
+}
+
+table .day_con,
+.week_con,
+.huge,
+.check_box,
+.save_td {
+  background-color: #fff;
+}
+
+#add_char {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 10px 0px;
+}
+
+
+/*이곳은 p태그 구간입니다.*/
+
+
+
+/* 이곳은 풋터 구역입니다. */
+#footer {
+  background-color: var(--footer-color);
+  /* position: relative;
+  bottom: 0; */
+  width: 100%;
+  padding: 20px 0 20px 30px;
+}
