@@ -35,16 +35,62 @@
                 </fieldset>
               </form>
             </td>
-            <td class="day_con">일일 컨텐츠</td>
-            <td class="week_con">주간 컨텐츠</td>
+            <td class="day_con">
+              <span class="kaos">카오스 던전</span>
+              <span class="guardian">가디언 토벌</span>
+              <span class="quest">에포나 퀘스트</span>
+            </td>
+            <td class="week_con">
+              <span id="char_week">
+
+              </span>
+            </td>
             <td rowspan="2" class="save_td">
               <form method="POST">
                 <input type="submit" value="저장">
               </form>
             </td>
           </tr>
+
           <tr class="sub">
-            <td class="huge">휴식게이지</td>
+            <td class="day_check_box">
+              <div id="kaos">
+                <form method="POST" action="index.js" id="kaos_form"> 
+                    <input type="checkbox" class="kaos_check_box" name="kaos_check_box1">
+                    <input type="checkbox" class="kaos_check_box" name="kaos_check_box2">
+                </form>
+                <div class="kaos_huge_box">
+                  <span class="kaos_huge1"></span>
+                  <span class="kaos_huge2"></span>
+                </div>
+              </div>
+
+
+              <div id="guardian">
+                <form method="POST" action="index.js" id="guardian_form"> 
+                  <input type="checkbox" class="guardian_check_box" name="guardian_check_box1">
+                  <input type="checkbox" class="guardian_check_box" name="guardian_check_box2">
+                </form>
+                <div class="guardian_huge_box">
+                  <span class="guardian_huge1"></span>
+                  <span class="guardian_huge2"></span>
+                </div>
+              </div>
+
+              <div id="quest">
+                <form method="POST" action="index.js" id="quest_form"> 
+                  <input type="checkbox" class="quest_check_box" name="quest_check_box1">
+                  <input type="checkbox" class="quest_check_box" name="quest_check_box2">
+                  <input type="checkbox" class="quest_check_box" name="quest_check_box3">
+                </form>
+                <div class="guest_huge_box">
+                  <span class="quest_huge1"></span>
+                  <span class="quest_huge2"></span>
+                  <span class="quest_huge3"></span>
+                </div>
+              </div>
+            </td>
+
             <td class="check_box">
               <form method="POST" action="index.js">
                 <input type="checkbox" id="oreha_check" name="oreha_check" value="oreha">

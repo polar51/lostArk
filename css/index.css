@@ -84,7 +84,7 @@ table .save_td input {
 table th,
 td {
   border: 1px solid;
-  padding: 20px;
+  padding: 10px 0 10px 0;
 }
 
 
@@ -96,7 +96,8 @@ table .day_con,
 .week_con,
 .huge,
 .check_box,
-.save_td {
+.save_td,
+.sub {
   background-color: #fff;
 }
 
@@ -107,6 +108,51 @@ table .day_con,
   margin: 10px 0 10px 0px;
 }
 
+/* 테이블 일일 컨텐츠 구간입니다. */
+.day_con {
+  position: relative;
+}
+
+.day_con>span {
+  position: absolute;
+  top: 10px;
+}
+
+.day_con>.kaos {
+  left: 5%;
+}
+
+.day_con>.guardian {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.day_con>.quest {
+  right: 5%;
+}
+
+
+.day_check_box {
+  position: relative;
+}
+
+.day_check_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: none;
+  top: 10px;
+}
+
+.kaos_huge_box>span,
+.guardian_huge_box>span,
+.guest_huge_box>span {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid green;
+  width: 20px;
+  height: 8px;
+}
 
 /*이곳은 p태그 구간입니다.*/
 
