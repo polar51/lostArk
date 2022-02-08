@@ -76,6 +76,16 @@ table .save_td,
   width: 10%;
 }
 
+table .name,
+.name_th {
+  width: 20%;
+}
+
+/* table .week_th,
+.week_con {
+  width: 30%;
+} */
+
 table .save_td input {
   padding: 25px;
   border-radius: 20px;
