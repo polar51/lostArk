@@ -67,9 +67,6 @@ table {
   border: 1px solid;
 }
 
-table tr.sub>td {
-  padding: 0;
-}
 
 table .save_td,
 .save_th {
@@ -81,13 +78,10 @@ table .name,
   width: 20%;
 }
 
-/* table .week_th,
-.week_con {
-  width: 30%;
-} */
+
 
 table .save_td input {
-  padding: 25px;
+  padding: 13px;
   border-radius: 20px;
 }
 
@@ -98,7 +92,7 @@ td {
 }
 
 
-table .napxme {
+table .name {
   background-color: var(--table-bg-color);
 }
 
@@ -128,41 +122,34 @@ table .day_con,
   top: 10px;
 }
 
-.day_con>.kaos {
-  left: 5%;
-}
-
-.day_con>.guardian {
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.day_con>.quest {
-  right: 5%;
-}
-
-
-.day_check_box {
-  position: relative;
-}
-
-.day_check_box {
+td.day_con>.kaos_con,.guardian_con,.quest_con{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  border: none;
-  top: 10px;
 }
 
 .kaos_huge_box>span,
 .guardian_huge_box>span,
 .guest_huge_box>span {
   display: inline-block;
-  background-color: transparent;
+  background-color: green;
   border: 1px solid green;
   width: 20px;
   height: 8px;
 }
+
+/* 주간 컨텐츠 구간입니다. */
+.check_box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+
+
+
+
 
 /*이곳은 p태그 구간입니다.*/
 

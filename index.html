@@ -26,8 +26,8 @@
           </tr>
           <tr>
             <td rowspan="2" class="name">
-              <form method="POST" action="index.js" name="name_level">
-                <fieldset>
+              <form method="POST" action="index.js" name="name_level" >
+                <fieldset id="char_info">
                   <legend>캐릭터정보</legend>
                   <input type="number" min="0" max="1700" id="char_level" name="char_level" value="" placeholder="레벨" autocomplete="off">
                   <br>
@@ -35,82 +35,129 @@
                 </fieldset>
               </form>
             </td>
-            <td class="day_con">
-              <span class="kaos">카오스 던전</span>
-              <span class="guardian">가디언 토벌</span>
-              <span class="quest">에포나 퀘스트</span>
-            </td>
-            <td class="week_con">
-              <span id="char_week">
+            <td class="day_con" rowspan="2">
+              <div class="kaos_con">
+                <div class="kaos">
+                  <p>카오스 던전</p>
+                  <div id="kaos">
+                    <form method="POST" action="index.js" id="kaos_form"> 
+                      <input type="checkbox" id="kaos_check_box1" name="kaos_check_box1">
+                      <input type="checkbox" id="kaos_check_box2" name="kaos_check_box2">
+                    </form>
+                  <div class="kaos_huge_box">
+                    <span class="kaos_huge"></span>
+                    <span class="kaos_huge"></span>
+                    <span class="kaos_huge"></span>
+                    <span class="kaos_huge"></span>
+                    <span class="kaos_huge"></span>
+                  </div>
+                </div>
+              </div>
+  
+                <div class="guardian_con">
+                  <div class="guardian">
+                    <p>가디언 토벌</p>
+                    <div id="guardian">
+                      <form method="POST" action="index.js" id="guardian_form"> 
+                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box1">
+                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box2">
+                      </form>
+                      <div class="guardian_huge_box">
+                        <span class="guardian_huge1"></span>
+                        <span class="guardian_huge2"></span>
+                        <span class="guardian_huge3"></span>
+                        <span class="guardian_huge4"></span>
+                        <span class="guardian_huge5"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="quest_con">
+                  <div class="quest">
+                    <p>에포나 퀘스트</p>
+                    <div id="quest">
+                      <form method="POST" action="index.js" id="quest_form"> 
+                        <input type="checkbox" class="quest_check_box" name="quest_check_box1">
+                        <input type="checkbox" class="quest_check_box" name="quest_check_box2">
+                        <input type="checkbox" class="quest_check_box" name="quest_check_box3">
+                      </form>
+                      <div class="guest_huge_box">
+                        <span class="quest_huge1"></span>
+                        <span class="quest_huge2"></span>
+                        <span class="quest_huge3"></span>
+                        <span class="quest_huge4"></span>
+                        <span class="quest_huge5"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
+              </div>
+
+              
+              
+            </td>
+            <td class="week_con" rowspan="2">
+              <span id="char_week">
+                <div class="check_box">
+                  <div class="oreha_con">
+                    <div>
+                      <p>오레하의 우물</p>
+                      <form action="index.js" method="post" id="oreha_form">
+                        <input type="checkbox" id="oreha_check_box" name="oreha_check_box" value="oreha">
+                      </form>
+                    </div>
+                  </div>
+
+                  <div class="argos_con">
+                    <p>아르고스</p>
+                    <form action="index.js" method="post" id="argos_form">
+                      <input type="checkbox" id="argos_check_box" name="argos_check_box" value="argos">
+                    </form>
+                  </div>
+
+                  <div class="baltan_con">
+                    <p>발탄</p>
+                    <form action="index.js" method="post" id="baltan_form">
+                      <input type="checkbox" id="baltan_check_box" name="baltan_check_box" value="baltan">
+                    </form>
+                  </div>
+
+                  <div class="biakiss_con">
+                    <p>비아키스</p>
+                    <form action="index.js" method="post" id="biakiss_form">
+                      <input type="checkbox" id="biakiss_check" name="biakiss_check" value="biakiss">
+                    </form>
+                  </div>
+
+                  <div class="koukusaton_con">
+                    <p>쿠쿠세이튼</p>
+                    <form action="index.js" method="post" id="koukusaton_form">
+                      <input type="checkbox" id="koukusaton_check" name="koukusaton_check" value="koukusaton">
+                    </form>
+                  </div>
+
+                  <div class="abrelshud_con">
+                    <p>아브렐슈드</p>
+                    <form action="index.js" method="post" id="abrelshud_form">
+                      <input type="checkbox" id="abrelshud_check" name="abrelshud_check" value="abrelshud">
+                    </form>
+                  </div>
+
+                </div>
               </span>
             </td>
+
             <td rowspan="2" class="save_td">
               <form method="POST">
-                <input type="submit" value="저장">
+                <input type="button" value="캐릭터 정보 저장" id="button1">
               </form>
             </td>
+
           </tr>
 
-          <tr class="sub">
-            <td class="day_check_box">
-
-              <div id="kaos">
-                <form method="POST" action="index.js" id="kaos_form"> 
-                    <input type="checkbox" class="kaos_check_box" name="kaos_check_box1">
-                    <input type="checkbox" class="kaos_check_box" name="kaos_check_box2">
-                </form>
-                <div class="kaos_huge_box">
-                  <span class="kaos_huge1"></span>
-                  <span class="kaos_huge2"></span>
-                  <span class="kaos_huge3"></span>
-                  <span class="kaos_huge4"></span>
-                  <span class="kaos_huge5"></span>
-                </div>
-              </div>
-
-
-              <div id="guardian">
-                <form method="POST" action="index.js" id="guardian_form"> 
-                  <input type="checkbox" class="guardian_check_box" name="guardian_check_box1">
-                  <input type="checkbox" class="guardian_check_box" name="guardian_check_box2">
-                </form>
-                <div class="guardian_huge_box">
-                  <span class="guardian_huge1"></span>
-                  <span class="guardian_huge2"></span>
-                  <span class="guardian_huge3"></span>
-                  <span class="guardian_huge4"></span>
-                  <span class="guardian_huge5"></span>
-                </div>
-              </div>
-
-              <div id="quest">
-                <form method="POST" action="index.js" id="quest_form"> 
-                  <input type="checkbox" class="quest_check_box" name="quest_check_box1">
-                  <input type="checkbox" class="quest_check_box" name="quest_check_box2">
-                  <input type="checkbox" class="quest_check_box" name="quest_check_box3">
-                </form>
-                <div class="guest_huge_box">
-                  <span class="quest_huge1"></span>
-                  <span class="quest_huge2"></span>
-                  <span class="quest_huge3"></span>
-                  <span class="quest_huge4"></span>
-                  <span class="quest_huge5"></span>
-                </div>
-              </div>
-            </td>
-
-            <td class="check_box">
-              <form method="POST" action="index.js">
-                <input type="checkbox" id="oreha_check" name="oreha_check" value="oreha">
-                <input type="checkbox" id="argos_check" name="argos_check" value="argos">
-                <input type="checkbox" id="baltan_check" name="baltan_check" value="baltan">
-                <input type="checkbox" id="biakiss_check" name="biakiss_check" value="biakiss">
-                <input type="checkbox" id="koukusaton_check" name="koukusaton_check" value="koukusaton">
-                <input type="checkbox" id="abrelshud_check" name="abrelshud_check" value="abrelshud">
-              </form>
-            </td>
-          </tr>
+            
         </table>
         <form action="index.js" method="post">
           <input id="add_char" type="button" value="캐릭터 추가하기">
