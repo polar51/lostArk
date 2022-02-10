@@ -132,10 +132,16 @@ td.day_con>.kaos_con,.guardian_con,.quest_con{
 .guardian_huge_box>span,
 .guest_huge_box>span {
   display: inline-block;
-  background-color: green;
   border: 1px solid green;
   width: 20px;
   height: 8px;
+}
+
+.on{
+  background-color: green;
+}
+.off{
+  background-color: transparent;
 }
 
 /* 주간 컨텐츠 구간입니다. */

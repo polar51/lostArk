@@ -24,29 +24,61 @@ document.getElementById('button1').onclick = function(){
 
 //일일 컨텐츠
 
-var kaos_chk1 = document.getElementById('kaos_check_box1')
-var kaos_chk2 = document.getElementById('kaos_check_box2')
+var kaos_chk1 = document.getElementById('kaos_check_box1');
+var kaos_chk2 = document.getElementById('kaos_check_box2');
 
 
-var kaos_huge = document.getElementsByClassName('kaos_huge');
+var kaos_huge = Array.from(document.getElementsByClassName('kaos_huge'));
 
-document.getElementById('kaos_check_box1').onclick = function(){
+var kaos_huge_on = Array.from(document.getElementsByClassName("kaos_huge on"));
 
+function kaos_checked(){
+  마지막 순서의 휴게 게이지의 색을 투명으로 한다 체크 해제시 마지막 순서의 휴게 게이지의 색을 채워준다
 
-    if(kaos_chk1.checked){
-      document.kaos_huge.style.backgroundColor = 'transparent'
-    } else{
-      document.kaos_huge.style.backgroundColor = 'green'
-    }
 }
 
 
-document.getElementById('kaos_check_box2').onclick = function(){
 
-  if(kaos_chk2.checked){
-    document.kaos_huge.style.backgroundColor = 'transparent'
-  } else{
-    document.kaos_huge.style.backgroundColor = 'green'
-  }
-  }
-  
+
+
+
+  // kaos_huge.forEach(function(kaos_huge,index){
+  //   if(kaos_huge.classList.contains('on')){
+  //     kaos_huge.classList.remove('on');
+  //     kaos_huge.classList.add('off');
+  //   } else {
+  //     kaos_huge.classList.remove('off');
+  //     kaos_huge.classList.add('on');
+  //   }
+  // })
+
+
+// kaos_huge.forEach(function(kaos_huge,index){
+
+//   document.getElementById('kaos_check_box1').onclick = function(){
+
+
+//     if(kaos_chk1.checked){
+//       kaos_huge.style.backgroundColor = 'transparent'
+//     } else{
+//       kaos_huge.style.backgroundColor = 'green'
+//     }
+// }
+
+// })
+
+
+
+// kaos_huge.forEach(function(kaos_huge,index){
+
+//   document.getElementById('kaos_check_box2').onclick = function(){
+
+//     if(kaos_chk2.checked){
+//       kaos_huge.style.backgroundColor = 'transparent'
+//     } else{
+//       kaos_huge.style.backgroundColor = 'green'
+//     }
+//     }
+
+// })
+
