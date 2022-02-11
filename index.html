@@ -41,8 +41,8 @@
                   <p>카오스 던전</p>
                   <div id="kaos">
                     <form method="POST" action="index.js" id="kaos_form"> 
-                      <input type="checkbox" id="kaos_check_box1" name="kaos_check_box1" onclick="kaos_checked()">
-                      <input type="checkbox" id="kaos_check_box2" name="kaos_check_box2" onclick="kaos_checked()">
+                      <input type="checkbox" id="kaos_check_box1" name="kaos_check_box1" onchange="kaos_checked(this)">
+                      <input type="checkbox" id="kaos_check_box2" name="kaos_check_box2" onchange="kaos_checked(this)">
                     </form>
                   <div class="kaos_huge_box">
                     <span class="kaos_huge on"></span>
@@ -59,15 +59,15 @@
                     <p>가디언 토벌</p>
                     <div id="guardian">
                       <form method="POST" action="index.js" id="guardian_form"> 
-                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box1">
-                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box2">
+                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box1" onchange="guardian_checked(this)" id="guardian_check_box1">
+                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box2" onchange="guardian_checked(this)" id="guardian_check_box2">
                       </form>
                       <div class="guardian_huge_box">
-                        <span class="guardian_huge1 on"></span>
-                        <span class="guardian_huge2 on"></span>
-                        <span class="guardian_huge3 on"></span>
-                        <span class="guardian_huge4"></span>
-                        <span class="guardian_huge5"></span>
+                        <span class="guardian_huge on"></span>
+                        <span class="guardian_huge on"></span>
+                        <span class="guardian_huge on"></span>
+                        <span class="guardian_huge"></span>
+                        <span class="guardian_huge"></span>
                       </div>
                     </div>
                   </div>
@@ -78,16 +78,16 @@
                     <p>에포나 퀘스트</p>
                     <div id="quest">
                       <form method="POST" action="index.js" id="quest_form"> 
-                        <input type="checkbox" class="quest_check_box" name="quest_check_box1">
-                        <input type="checkbox" class="quest_check_box" name="quest_check_box2">
-                        <input type="checkbox" class="quest_check_box" name="quest_check_box3">
+                        <input type="checkbox" class="quest_check_box" name="quest_check_box1" onchange="quest_checked(this)" id="quest_check_box1">
+                        <input type="checkbox" class="quest_check_box" name="quest_check_box2" onchange="quest_checked(this)" id="quest_check_box2">
+                        <input type="checkbox" class="quest_check_box" name="quest_check_box3" onchange="quest_checked(this)" id="quest_check_box3">
                       </form>
                       <div class="guest_huge_box">
-                        <span class="quest_huge1"></span>
-                        <span class="quest_huge2"></span>
-                        <span class="quest_huge3"></span>
-                        <span class="quest_huge4"></span>
-                        <span class="quest_huge5"></span>
+                        <span class="quest_huge on"></span>
+                        <span class="quest_huge on"></span>
+                        <span class="quest_huge on"></span>
+                        <span class="quest_huge"></span>
+                        <span class="quest_huge"></span>
                       </div>
                     </div>
                   </div>
@@ -102,12 +102,17 @@
               <span id="char_week">
                 <div class="check_box">
                   <div class="oreha_con">
-                    <div>
-                      <p>오레하의 우물</p>
-                      <form action="index.js" method="post" id="oreha_form">
-                        <input type="checkbox" id="oreha_check_box" name="oreha_check_box" value="oreha">
-                      </form>
-                    </div>
+                    <p>오레하의 우물</p>
+                    <form action="index.js" method="post" id="oreha_form">
+                      <input type="checkbox" id="oreha_check_box" name="oreha_check_box" value="oreha">
+                    </form>
+                  </div>
+
+                  <div class="oreha_hard_con">
+                    <p>오레하의 우물(하드)</p>
+                    <form action="index.js" method="post" id="oreha_hard_form">
+                      <input type="checkbox" id="oreha_hard_check_box" name="oreha_hard_check_box" value="oreha_hard">
+                    </form>
                   </div>
 
                   <div class="argos_con">
@@ -124,10 +129,24 @@
                     </form>
                   </div>
 
+                  <div class="baltan_hard_con">
+                    <p>발탄(하드)</p>
+                    <form action="index.js" method="post" id="baltan_hard_form">
+                      <input type="checkbox" id="baltan_hard_check_box" name="baltan_hard_check_box" value="baltan_hard">
+                    </form>
+                  </div>
+
                   <div class="biakiss_con">
                     <p>비아키스</p>
                     <form action="index.js" method="post" id="biakiss_form">
                       <input type="checkbox" id="biakiss_check" name="biakiss_check" value="biakiss">
+                    </form>
+                  </div>
+
+                  <div class="biakiss_hard_con">
+                    <p>비아키스(하드)</p>
+                    <form action="index.js" method="post" id="biakiss_hard_form">
+                      <input type="checkbox" id="biakiss_hard_check" name="biakiss_hard_check" value="biakiss_hard">
                     </form>
                   </div>
 
@@ -142,6 +161,13 @@
                     <p>아브렐슈드</p>
                     <form action="index.js" method="post" id="abrelshud_form">
                       <input type="checkbox" id="abrelshud_check" name="abrelshud_check" value="abrelshud">
+                    </form>
+                  </div>
+
+                  <div class="abrelshud_hard_con">
+                    <p>아브렐슈드(하드)</p>
+                    <form action="index.js" method="post" id="abrelshud_hard_form">
+                      <input type="checkbox" id="abrelshud_hard_check" name="abrelshud_hard_check" value="abrelshud_hard">
                     </form>
                   </div>
 

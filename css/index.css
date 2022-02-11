@@ -140,9 +140,7 @@ td.day_con>.kaos_con,.guardian_con,.quest_con{
 .on{
   background-color: green;
 }
-.off{
-  background-color: transparent;
-}
+
 
 /* 주간 컨텐츠 구간입니다. */
 .check_box{
@@ -152,7 +150,13 @@ td.day_con>.kaos_con,.guardian_con,.quest_con{
   flex-wrap: wrap;
 }
 
+.week_con> #char_week>.check_box>.show{
+  display: block;
+}
 
+.check_box>div {
+  display: none;
+}
 
 
 
