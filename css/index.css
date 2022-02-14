@@ -68,10 +68,6 @@ table {
 }
 
 
-table .save_td,
-.save_th {
-  width: 10%;
-}
 
 table .name,
 .name_th {
@@ -80,9 +76,11 @@ table .name,
 
 
 
-table .save_td input {
-  padding: 13px;
+table .save_bt {
+  display: block;
+  padding: 5px 10px 5px 10px;
   border-radius: 20px;
+  margin: 10px auto 0 auto;
 }
 
 table th,
@@ -100,7 +98,6 @@ table .day_con,
 .week_con,
 .huge,
 .check_box,
-.save_td,
 .sub {
   background-color: #fff;
 }

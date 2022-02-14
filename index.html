@@ -22,35 +22,35 @@
             <th class="name_th">캐릭터명</th>
             <th>일일 컨텐츠</th>
             <th class="week_th">주간 컨텐츠</th>
-            <th class="save_th">저장하기</th>
           </tr>
           <tr>
-            <td rowspan="2" class="name">
-              <form method="POST" action="index.js" name="name_level" >
-                <fieldset id="char_info">
+            <td rowspan="2" id="char_info">
+              <form method="POST" action="index.js" name="name_level" class="name_level">
+                <fieldset>
                   <legend>캐릭터정보</legend>
-                  <input type="number" min="0" max="1700" id="char_level" name="char_level" value="" placeholder="레벨" autocomplete="off">
+                  <input type="number" min="0" max="1700" class="char_level" name="char_level" value="" placeholder="레벨" autocomplete="off">
                   <br>
-                  <input type="text" id="char_name" name="char_name" value="" placeholder="캐릭터명" autocomplete="off">
+                  <input type="text" class="char_name" name="char_name" value="" placeholder="캐릭터명" autocomplete="off">
+                  <input type="button" value="캐릭터 정보 저장" class="save_bt">
                 </fieldset>
               </form>
             </td>
-            <td class="day_con" rowspan="2">
+            <td class="day_con" rowspan="2" id="day_box">
               <div class="kaos_con">
                 <div class="kaos">
                   <p>카오스 던전</p>
                   <div id="kaos">
                     <form method="POST" action="index.js" id="kaos_form"> 
-                      <input type="checkbox" id="kaos_check_box1" name="kaos_check_box1" onchange="kaos_checked(this)">
-                      <input type="checkbox" id="kaos_check_box2" name="kaos_check_box2" onchange="kaos_checked(this)">
+                      <input type="checkbox" id="kaos_check_box1" name="kaos_check_box1" value="kaos_huge">
+                      <input type="checkbox" id="kaos_check_box2" name="kaos_check_box2" value="kaos_huge">
                     </form>
-                  <div class="kaos_huge_box">
-                    <span class="kaos_huge on"></span>
-                    <span class="kaos_huge on"></span>
-                    <span class="kaos_huge on"></span>
-                    <span class="kaos_huge on"></span>
-                    <span class="kaos_huge"></span>
-                  </div>
+                    <div class="kaos_huge_box">
+                      <span class="kaos_huge on"></span>
+                      <span class="kaos_huge on"></span>
+                      <span class="kaos_huge on"></span>
+                      <span class="kaos_huge on"></span>
+                      <span class="kaos_huge"></span>
+                    </div>
                 </div>
               </div>
   
@@ -59,8 +59,8 @@
                     <p>가디언 토벌</p>
                     <div id="guardian">
                       <form method="POST" action="index.js" id="guardian_form"> 
-                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box1" onchange="guardian_checked(this)" id="guardian_check_box1">
-                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box2" onchange="guardian_checked(this)" id="guardian_check_box2">
+                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box1" id="guardian_check_box1" value="guardian_huge">
+                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box2" id="guardian_check_box2" value="guardian_huge">
                       </form>
                       <div class="guardian_huge_box">
                         <span class="guardian_huge on"></span>
@@ -78,9 +78,9 @@
                     <p>에포나 퀘스트</p>
                     <div id="quest">
                       <form method="POST" action="index.js" id="quest_form"> 
-                        <input type="checkbox" class="quest_check_box" name="quest_check_box1" onchange="quest_checked(this)" id="quest_check_box1">
-                        <input type="checkbox" class="quest_check_box" name="quest_check_box2" onchange="quest_checked(this)" id="quest_check_box2">
-                        <input type="checkbox" class="quest_check_box" name="quest_check_box3" onchange="quest_checked(this)" id="quest_check_box3">
+                        <input type="checkbox" class="quest_check_box" name="quest_check_box1" id="quest_check_box1" value="quest_huge">
+                        <input type="checkbox" class="quest_check_box" name="quest_check_box2" id="quest_check_box2" value="quest_huge">
+                        <input type="checkbox" class="quest_check_box" name="quest_check_box3" id="quest_check_box3" value="quest_huge">
                       </form>
                       <div class="guest_huge_box">
                         <span class="quest_huge on"></span>
@@ -174,13 +174,6 @@
                 </div>
               </span>
             </td>
-
-            <td rowspan="2" class="save_td">
-              <form method="POST">
-                <input type="button" value="캐릭터 정보 저장" id="button1">
-              </form>
-            </td>
-
           </tr>
 
             

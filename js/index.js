@@ -1,18 +1,20 @@
-var oreha = document.getElementsByClassName('oreha_con');
-var oreha_hard = document.getElementsByClassName('oreha_hard_con');
+var raid =
+{oreha : Array.from(document.getElementsByClassName('oreha_con')),
+oreha_hard : Array.from(document.getElementsByClassName('oreha_hard_con')),
 
-var argos = document.getElementsByClassName('argos_con');
+argos : Array.from(document.getElementsByClassName('argos_con')),
 
-var baltan = document.getElementsByClassName('baltan_con');
-var baltan_hard = document.getElementsByClassName('baltan_hard_con');
+baltan : Array.from(document.getElementsByClassName('baltan_con')),
+baltan_hard : Array.from(document.getElementsByClassName('baltan_hard_con')),
 
-var biakiss = document.getElementsByClassName('biakiss_con');
-var biakiss_hard = document.getElementsByClassName('biakiss_hard_con');
+biakiss : Array.from(document.getElementsByClassName('biakiss_con')),
+biakiss_hard : Array.from(document.getElementsByClassName('biakiss_hard_con')),
 
-var koukusaton = document.getElementsByClassName('koukusaton_con');
+koukusaton : Array.from(document.getElementsByClassName('koukusaton_con')),
 
-var abrelshud = document.getElementsByClassName('abrelshud_con');
-var abrelshud_hard = document.getElementsByClassName('abrelshud_hard_con');
+abrelshud : Array.from(document.getElementsByClassName('abrelshud_con')),
+abrelshud_hard : Array.from(document.getElementsByClassName('abrelshud_hard_con'))
+}
 
 
 
@@ -22,100 +24,75 @@ var abrelshud_hard = document.getElementsByClassName('abrelshud_hard_con');
 
 
 
-document.getElementById('button1').addEventListener('click', ()=>{
-  var char1_level = document.getElementById('char_level');
-  var char1_name = document.getElementById('char_name');
+var char_info = document.querySelector('#char_info')
 
-  var char1_info1 = document.createElement('div'); 
-  char1_info1.textContent = char1_level.value;
-
-  document.getElementById('char_info').appendChild(char1_info1); 
-  char1_level.remove();
-
-  var char1_info2 = document.createElement('div');
-  char1_info2.textContent = char1_name.value;
-
-  document.getElementById('char_info').appendChild(char1_info2); 
-  char1_name.remove();
-
-  //정보 저장 버튼 삭제?
-
-  var char1_week_raid = char1_level.value;
-  var i = 1;
-  if(char1_week_raid>=1325){
-    oreha.classList.add('show')
+char_info.addEventListener("click",function(e){
+  if(e.target.value=="캐릭터 정보 저장"){
+    var level_arr = Array.from(e.currentTarget.getElementsByClassName("char_level"));
+    var char_level_ipt = level_arr[level_arr.length-1];
+    var char_level = char_level_ipt.value;
+    var name_arr = Array.from(e.currentTarget.getElementsByClassName("char_name"));
+    var char_name_ipt = name_arr[name_arr.length-1];
+    var char_name = char_name_ipt.value;
+    var form_arr = Array.from(e.currentTarget.getElementsByClassName("name_level"));
+    var form = form_arr[form_arr.length-1]
+    let p = document.createElement('p');
+    let p2 = document.createElement('p');
+    form.remove();
+    p.innerHTML=char_level;
+    e.currentTarget.appendChild(p);
+    p2.innerHTML=char_name;
+    e.currentTarget.appendChild(p2);
+    if(1414>char_level>=1325){
+      raid['oreha'][form_arr.length-1].classList.add('show');
+      raid['oreha_hard'][form_arr.length-1].classList.add('show');
+    } else if(1475>char_level>=1370){
+      raid['argos'][form_arr.length-1].classList.add('show');
+    } else if(1444>char_level>=1415){
+      raid['baltan'][form_arr.length-1].classList.add('show');
+    } else if(char_level>=1445){
+      raid['baltan_hard'][form_arr.length-1].classList.add('show');
+    } else if(1459>char_level>=1430){
+      raid['biakiss'][form_arr.length-1].classList.add('show');
+    } else if(char_level>=1460){
+      raid['biakiss_hard'][form_arr.length-1].classList.add('show');
+    } else if(char_level>=1475){
+      raid['koukusaton'][form_arr.length-1].classList.add('show');
+    } else if(1539>char_level>=1490){
+      raid['abrelshud'][form_arr.length-1].classList.add('show');
+    } else if (char_level>=1540){
+      raid['abrelshud_hard'][form_arr.length-1].classList.add('show');
+    }
   }
-
-},{once:true});
-
+});
 
 
 
 
 
-//일일 컨텐츠
+//일일 컨텐츠 
 
-// var kaos_chk1 = document.getElementById('kaos_check_box1');
-// var kaos_chk2 = document.getElementById('kaos_check_box2');
-
-
-var kaos_huge = Array.from(document.getElementsByClassName('kaos_huge'));
-var kaos_huge_on = Array.from(document.getElementsByClassName("kaos_huge on"));
-var kaos_huge_i = kaos_huge_on[kaos_huge_on.length-1];
-
-
-function kaos_checked(checked){
-  var arr = Array.from(document.getElementsByClassName("kaos_huge on"));
-  var i = arr[arr.length-1];
-  var x = kaos_huge_on[arr.length];
-  if(checked.checked==true){
-    i.classList.remove('on')
-  } else {
-    x.classList.add('on')
-  }
+var huge = {
+  kaos_huge : Array.from(document.getElementsByClassName('kaos_huge on')),
+  guardian_huge : Array.from(document.getElementsByClassName('guardian_huge on')),
+  quest_huge : Array.from(document.getElementsByClassName('quest_huge on'))
 };
 
+var day_box = document.getElementById("day_box");
 
-
-// var guardian_chk1 = document.getElementById('guardian_check_box1');
-// var guardian_chk2 = document.getElementById('guardian_check_box2');
-
-
-var guardian_huge = Array.from(document.getElementsByClassName('guardian_huge'));
-var guardian_huge_on = Array.from(document.getElementsByClassName("guardian_huge on"));
-var guardian_huge_i = guardian_huge_on[guardian_huge_on.length-1];
-
-
-function guardian_checked(checked){
-  var arr1 = Array.from(document.getElementsByClassName("guardian_huge on"));
-  var i1 = arr1[arr1.length-1];
-  var x1 = guardian_huge_on[arr1.length];
-  if(checked.checked==true){
-    i1.classList.remove('on')
+day_box.addEventListener("change",function(e){
+    var fsel = e.target.value;
+    var sel = e.target.parentNode.nextElementSibling;
+    var sel_arr = Array.from(sel.getElementsByClassName("on"));
+    var sel_arr_i = sel_arr[sel_arr.length-1];
+  if(e.target.checked){
+    sel_arr_i.classList.remove('on')
   } else {
-    x1.classList.add('on')
+    var sel_arr_i2= huge[fsel][sel_arr.length];
+    sel_arr_i2.classList.add('on')
   }
-};
-
-// var quest_chk1 = document.getElementById('quest_check_box1');
-// var quest_chk2 = document.getElementById('quest_check_box2');
-// var quest_chk2 = document.getElementById('quest_check_box2');
+});
 
 
-var quest_huge = Array.from(document.getElementsByClassName('quest_huge'));
-var quest_huge_on = Array.from(document.getElementsByClassName("quest_huge on"));
-var quest_huge_i = quest_huge_on[quest_huge_on.length-1];
-
-
-function quest_checked(checked){
-  var arr2 = Array.from(document.getElementsByClassName("quest_huge on"));
-  var i2 = arr2[arr2.length-1];
-  var x2 = quest_huge_on[arr2.length];
-  if(checked.checked==true){
-    i2.classList.remove('on')
-  } else {
-    x2.classList.add('on')
-  }
-};
 
 
