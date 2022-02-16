@@ -17,170 +17,208 @@
   <section>
     <div class="inner">
       <article id="main_con">
-        <table>
-          <tr>
-            <th class="name_th">캐릭터명</th>
-            <th>일일 컨텐츠</th>
-            <th class="week_th">주간 컨텐츠</th>
-          </tr>
-          <tr>
-            <td rowspan="2" id="char_info">
-              <form method="POST" action="index.js" name="name_level" class="name_level">
-                <fieldset>
-                  <legend>캐릭터정보</legend>
-                  <input type="number" min="0" max="1700" class="char_level" name="char_level" value="" placeholder="레벨" autocomplete="off">
-                  <br>
-                  <input type="text" class="char_name" name="char_name" value="" placeholder="캐릭터명" autocomplete="off">
-                  <input type="button" value="캐릭터 정보 저장" class="save_bt">
-                </fieldset>
-              </form>
-            </td>
-            <td class="day_con" rowspan="2" id="day_box">
-              <div class="kaos_con">
-                <div class="kaos">
-                  <p>카오스 던전</p>
-                  <div id="kaos">
-                    <form method="POST" action="index.js" id="kaos_form"> 
-                      <input type="checkbox" id="kaos_check_box1" name="kaos_check_box1" value="kaos_huge">
-                      <input type="checkbox" id="kaos_check_box2" name="kaos_check_box2" value="kaos_huge">
-                    </form>
-                    <div class="kaos_huge_box">
-                      <span class="kaos_huge on"></span>
-                      <span class="kaos_huge on"></span>
-                      <span class="kaos_huge on"></span>
-                      <span class="kaos_huge on"></span>
-                      <span class="kaos_huge"></span>
-                    </div>
-                </div>
-              </div>
-  
-                <div class="guardian_con">
-                  <div class="guardian">
-                    <p>가디언 토벌</p>
-                    <div id="guardian">
-                      <form method="POST" action="index.js" id="guardian_form"> 
-                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box1" id="guardian_check_box1" value="guardian_huge">
-                        <input type="checkbox" class="guardian_check_box" name="guardian_check_box2" id="guardian_check_box2" value="guardian_huge">
+        <table id="char">
+        <caption>제목셀이 고정된 표입니다.</caption>
+          <colgroup  colgroup>
+            <col width="33%">
+            <col width="34%">
+            <col width="33%">
+          </colgroup>
+          <thead>
+            <tr>
+                <th scope="col">캐릭터 명</th>
+                <th scope="col">일일 컨텐츠</th>
+                <th scope="col">주간 컨텐츠</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="char_tr">
+              <td class="char_info">
+                <form method="POST" action="index.js" name="name_level" class="name_level">
+                  <fieldset>
+                    <legend>캐릭터정보</legend>
+                    <input type="number" min="0" max="1700" class="char_level" name="char_level" value="" placeholder="레벨" autocomplete="off">
+                    <br>
+                    <input type="text" class="char_name" name="char_name" value="" placeholder="캐릭터명" autocomplete="off">
+                    <input type="button" value="캐릭터 정보 저장" class="save_bt">
+                  </fieldset>
+                </form>
+              </td>
+              <td class="day_con">
+                <div class="kaos_con">
+                  <div class="kaos">
+                    <p>카오스 던전</p>
+                    <div id="kaos">
+                      <form method="POST" action="index.js" class="kaos_form"> 
+                        <input type="checkbox" class="kaos_check_box1" name="kaos_check_box1" value="kaos_huge">
+                        <input type="checkbox" class="kaos_check_box2" name="kaos_check_box2" value="kaos_huge">
                       </form>
-                      <div class="guardian_huge_box">
-                        <span class="guardian_huge on"></span>
-                        <span class="guardian_huge on"></span>
-                        <span class="guardian_huge on"></span>
-                        <span class="guardian_huge"></span>
-                        <span class="guardian_huge"></span>
+                      <div class="kaos_huge_box">
+                        <span class="kaos_huge on"></span>
+                        <span class="kaos_huge on"></span>
+                        <span class="kaos_huge on"></span>
+                        <span class="kaos_huge on"></span>
+                        <span class="kaos_huge"></span>
+                      </div>
+                  </div>
+                </div>
+    
+                  <div class="guardian_con">
+                    <div class="guardian">
+                      <p>가디언 토벌</p>
+                      <div id="guardian">
+                        <form method="POST" action="index.js" id="guardian_form"> 
+                          <input type="checkbox" class="guardian_check_box" name="guardian_check_box1" value="guardian_huge">
+                          <input type="checkbox" class="guardian_check_box" name="guardian_check_box2" value="guardian_huge">
+                        </form>
+                        <div class="guardian_huge_box">
+                          <span class="guardian_huge on"></span>
+                          <span class="guardian_huge on"></span>
+                          <span class="guardian_huge on"></span>
+                          <span class="guardian_huge"></span>
+                          <span class="guardian_huge"></span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-  
-                <div class="quest_con">
-                  <div class="quest">
-                    <p>에포나 퀘스트</p>
-                    <div id="quest">
-                      <form method="POST" action="index.js" id="quest_form"> 
-                        <input type="checkbox" class="quest_check_box" name="quest_check_box1" id="quest_check_box1" value="quest_huge">
-                        <input type="checkbox" class="quest_check_box" name="quest_check_box2" id="quest_check_box2" value="quest_huge">
-                        <input type="checkbox" class="quest_check_box" name="quest_check_box3" id="quest_check_box3" value="quest_huge">
-                      </form>
-                      <div class="guest_huge_box">
-                        <span class="quest_huge on"></span>
-                        <span class="quest_huge on"></span>
-                        <span class="quest_huge on"></span>
-                        <span class="quest_huge"></span>
-                        <span class="quest_huge"></span>
+    
+                  <div class="quest_con">
+                    <div class="quest">
+                      <p>에포나 퀘스트</p>
+                      <div class="quest">
+                        <form method="POST" action="index.js" class="quest_form"> 
+                          <input type="checkbox" class="quest_check_box" name="quest_check_box1" value="quest_huge">
+                          <input type="checkbox" class="quest_check_box" name="quest_check_box2" value="quest_huge">
+                          <input type="checkbox" class="quest_check_box" name="quest_check_box3" value="quest_huge">
+                        </form>
+                        <div class="guest_huge_box">
+                          <span class="quest_huge on"></span>
+                          <span class="quest_huge on"></span>
+                          <span class="quest_huge on"></span>
+                          <span class="quest_huge"></span>
+                          <span class="quest_huge"></span>
+                        </div>
                       </div>
                     </div>
                   </div>
+  
                 </div>
-
-              </div>
-
-              
-              
-            </td>
-            <td class="week_con" rowspan="2">
-              <span id="char_week">
-                <div class="check_box">
-                  <div class="oreha_con">
-                    <p>오레하의 우물</p>
-                    <form action="index.js" method="post" id="oreha_form">
-                      <input type="checkbox" id="oreha_check_box" name="oreha_check_box" value="oreha">
-                    </form>
+  
+                
+                
+              </td>
+              <td class="week_con">
+                <span id="char_week">
+                  <div class="check_box">
+  
+                    <div class="oreha_hard_con">
+                      <p>오레하의 우물(하드)</p>
+                      <form action="index.js" method="post" id="oreha_hard_form">
+                        <input type="checkbox" id="oreha_hard_check_box" name="oreha_hard_check_box" value="1300">
+                      </form>
+                    </div>
+  
+                    <div class="argos_con">
+                      <p>아르고스</p>
+                      <form action="index.js" method="post" id="argos_form">
+                        <input type="checkbox" id="argos_check_box" name="argos_check_box" value="1600">
+                      </form>
+                    </div>
+  
+                    <div class="baltan_con">
+                      <p>발탄</p>
+                      <form action="index.js" method="post" id="baltan_form">
+                        <input type="checkbox" id="baltan_check_box" name="baltan_check_box" value="2500">
+                      </form>
+                    </div>
+  
+                    <div class="baltan_hard_con">
+                      <p>발탄(하드)</p>
+                      <form action="index.js" method="post" id="baltan_hard_form">
+                        <input type="checkbox" id="baltan_hard_check_box" name="baltan_hard_check_box" value="4500">
+                      </form>
+                    </div>
+  
+                    <div class="biakiss_con">
+                      <p>비아키스</p>
+                      <form action="index.js" method="post" id="biakiss_form">
+                        <input type="checkbox" id="biakiss_check" name="biakiss_check" value="2500">
+                      </form>
+                    </div>
+  
+                    <div class="biakiss_hard_con">
+                      <p>비아키스(하드)</p>
+                      <form action="index.js" method="post" id="biakiss_hard_form">
+                        <input type="checkbox" id="biakiss_hard_check" name="biakiss_hard_check" value="4500">
+                      </form>
+                    </div>
+  
+                    <div class="hard_con">
+                      <p>비아키스(하드) 또는 발탄(하드)</p>
+                      <form action="index.js" method="post" id="hard_form">
+                        <input type="checkbox" id="hard_check" name="hard_check" value="4500">
+                      </form>
+                    </div>
+  
+                    <div class="koukusaton_con">
+                      <p>쿠쿠세이튼</p>
+                      <form action="index.js" method="post" id="koukusaton_form">
+                        <input type="checkbox" id="koukusaton_check" name="koukusaton_check" value="4500">
+                      </form>
+                    </div>
+  
+                    <div class="abrelshud_con12">
+                      <p>아브렐슈드1~2관</p>
+                      <form action="index.js" method="post" id="abrelshud_form">
+                        <input type="checkbox" id="abrelshud_check" name="abrelshud_check" value="4500">
+                      </form>
+                    </div>
+  
+                    <div class="abrelshud_con14">
+                      <p>아브렐슈드1~4관</p>
+                      <form action="index.js" method="post" id="abrelshud_form">
+                        <input type="checkbox" id="abrelshud_check" name="abrelshud_check" value="6000">
+                      </form>
+                    </div>
+  
+                    <div class="abrelshud_con16">
+                      <p>아브렐슈드1~6관</p>
+                      <form action="index.js" method="post" id="abrelshud_form">
+                        <input type="checkbox" id="abrelshud_check" name="abrelshud_check" value="8500">
+                      </form>
+                    </div>
+  
+                    <div class="abrelshud_hard_con12">
+                      <p>아브렐슈드(하드)1~2관</p>
+                      <form action="index.js" method="post" id="abrelshud_hard_form">
+                        <input type="checkbox" id="abrelshud_hard_check" name="abrelshud_hard_check" value="5500">
+                      </form>
+                    </div>
+                    <div class="abrelshud_hard_con14">
+                      <p>아브렐슈드(하드)1~4관</p>
+                      <form action="index.js" method="post" id="abrelshud_hard_form">
+                        <input type="checkbox" id="abrelshud_hard_check" name="abrelshud_hard_check" value="7500">
+                      </form>
+                    </div>
+  
+                    <div class="abrelshud_hard_con16">
+                      <p>아브렐슈드(하드)1~6관</p>
+                      <form action="index.js" method="post" id="abrelshud_hard_form">
+                        <input type="checkbox" id="abrelshud_hard_check" name="abrelshud_hard_check" value="10500">
+                      </form>
+                    </div>
+  
                   </div>
-
-                  <div class="oreha_hard_con">
-                    <p>오레하의 우물(하드)</p>
-                    <form action="index.js" method="post" id="oreha_hard_form">
-                      <input type="checkbox" id="oreha_hard_check_box" name="oreha_hard_check_box" value="oreha_hard">
-                    </form>
-                  </div>
-
-                  <div class="argos_con">
-                    <p>아르고스</p>
-                    <form action="index.js" method="post" id="argos_form">
-                      <input type="checkbox" id="argos_check_box" name="argos_check_box" value="argos">
-                    </form>
-                  </div>
-
-                  <div class="baltan_con">
-                    <p>발탄</p>
-                    <form action="index.js" method="post" id="baltan_form">
-                      <input type="checkbox" id="baltan_check_box" name="baltan_check_box" value="baltan">
-                    </form>
-                  </div>
-
-                  <div class="baltan_hard_con">
-                    <p>발탄(하드)</p>
-                    <form action="index.js" method="post" id="baltan_hard_form">
-                      <input type="checkbox" id="baltan_hard_check_box" name="baltan_hard_check_box" value="baltan_hard">
-                    </form>
-                  </div>
-
-                  <div class="biakiss_con">
-                    <p>비아키스</p>
-                    <form action="index.js" method="post" id="biakiss_form">
-                      <input type="checkbox" id="biakiss_check" name="biakiss_check" value="biakiss">
-                    </form>
-                  </div>
-
-                  <div class="biakiss_hard_con">
-                    <p>비아키스(하드)</p>
-                    <form action="index.js" method="post" id="biakiss_hard_form">
-                      <input type="checkbox" id="biakiss_hard_check" name="biakiss_hard_check" value="biakiss_hard">
-                    </form>
-                  </div>
-
-                  <div class="koukusaton_con">
-                    <p>쿠쿠세이튼</p>
-                    <form action="index.js" method="post" id="koukusaton_form">
-                      <input type="checkbox" id="koukusaton_check" name="koukusaton_check" value="koukusaton">
-                    </form>
-                  </div>
-
-                  <div class="abrelshud_con">
-                    <p>아브렐슈드</p>
-                    <form action="index.js" method="post" id="abrelshud_form">
-                      <input type="checkbox" id="abrelshud_check" name="abrelshud_check" value="abrelshud">
-                    </form>
-                  </div>
-
-                  <div class="abrelshud_hard_con">
-                    <p>아브렐슈드(하드)</p>
-                    <form action="index.js" method="post" id="abrelshud_hard_form">
-                      <input type="checkbox" id="abrelshud_hard_check" name="abrelshud_hard_check" value="abrelshud_hard">
-                    </form>
-                  </div>
-
-                </div>
-              </span>
-            </td>
-          </tr>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+          
 
             
         </table>
-        <form action="index.js" method="post">
-          <input id="add_char" type="button" value="캐릭터 추가하기">
-        </form>
+          <input id="add_char" type="button" value="캐릭터 추가하기" onclick="addRow()">
       </article>
 
 
