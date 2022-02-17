@@ -1,34 +1,10 @@
-//캐릭터정보 객채
-var char_list = Array.from(document.getElementsByClassName("char_info"));
-var char_name = Array.from(document.getElementsByClassName("char_name"));
+
 
 //레이드 객체
 
-var raid =
-{oreha : Array.from(document.getElementsByClassName('oreha_con')),
-oreha_hard : Array.from(document.getElementsByClassName('oreha_hard_con')),
-
-argos : Array.from(document.getElementsByClassName('argos_con')),
-
-baltan : Array.from(document.getElementsByClassName('baltan_con')),
-baltan_hard : Array.from(document.getElementsByClassName('baltan_hard_con')),
-
-biakiss : Array.from(document.getElementsByClassName('biakiss_con')),
-biakiss_hard : Array.from(document.getElementsByClassName('biakiss_hard_con')),
-
-hard : Array.from(document.getElementsByClassName('hard_con')),
-
-koukusaton : Array.from(document.getElementsByClassName('koukusaton_con')),
-
-abrelshud12 : Array.from(document.getElementsByClassName('abrelshud_con12')),
-abrelshud_hard12 : Array.from(document.getElementsByClassName('abrelshud_hard_con12')),
-
-abrelshud14 : Array.from(document.getElementsByClassName('abrelshud_con14')),
-abrelshud_hard14 : Array.from(document.getElementsByClassName('abrelshud_hard_con14')),
-
-abrelshud16 : Array.from(document.getElementsByClassName('abrelshud_con16')),
-abrelshud_hard16 : Array.from(document.getElementsByClassName('abrelshud_hard_con16'))
-}
+// var raid =
+// {
+// }
 
 
 
@@ -38,111 +14,183 @@ abrelshud_hard16 : Array.from(document.getElementsByClassName('abrelshud_hard_co
 
 
 
-
-
-// char_info.addEventListener("click",function(e){
-//   if(e.target.value=="캐릭터 정보 저장"){
-//     var level_arr = Array.from(e.currentTarget.getElementsByClassName("char_level"));
-//     var char_level_ipt = level_arr[level_arr.length-1];
-//     var char_level = char_level_ipt.value;
-//     var name_arr = Array.from(e.currentTarget.getElementsByClassName("char_name"));
-//     var char_name_ipt = name_arr[name_arr.length-1];
-//     var char_name = char_name_ipt.value;
-//     var form_arr = Array.from(e.currentTarget.getElementsByClassName("name_level"));
-//     var form = form_arr[form_arr.length-1]
-//     let p = document.createElement('p');
-//     let p2 = document.createElement('p');
-//     form.remove();
-//     p.innerHTML=char_level;
-//     e.currentTarget.appendChild(p);
-//     p2.innerHTML=char_name;
-//     e.currentTarget.appendChild(p2);
-//     if(1370>char_level&&char_level>=1325){
-//       raid['oreha_hard'][form_arr.length-1].classList.add('show')
-//     } else if(1415>char_level&&char_level>=1370){
-//       raid['oreha_hard'][form_arr.length-1].classList.add('show')
-//       raid['argos'][form_arr.length-1].classList.add('show')
-//     } else if(1430>char_level&&char_level>=1415){
-//       raid['argos'][form_arr.length-1].classList.add('show')
-//       raid['baltan'][form_arr.length-1].classList.add('show')
-//     } else if(1445>char_level&&char_level>=1430){
-//       raid['argos'][form_arr.length-1].classList.add('show')
-//       raid['baltan'][form_arr.length-1].classList.add('show')
-//       raid['biakiss'][form_arr.length-1].classList.add('show')
-//     } else if(1460>char_level&&char_level>=1445){
-//       raid['argos'][form_arr.length-1].classList.add('show')
-//       raid['baltan_hard'][form_arr.length-1].classList.add('show')
-//       raid['biakiss'][form_arr.length-1].classList.add('show')
-//     } else if(1475>char_level&&char_level>=1460){
-//       raid['argos'][form_arr.length-1].classList.add('show')
-//       raid['baltan_hard'][form_arr.length-1].classList.add('show')
-//       raid['biakiss_hard'][form_arr.length-1].classList.add('show')
-//     } else if(1490>char_level&&char_level>=1475){
-//       raid['koukusaton'][form_arr.length-1].classList.add('show')
-//       raid['baltan_hard'][form_arr.length-1].classList.add('show')
-//       raid['biakiss_hard'][form_arr.length-1].classList.add('show')
-//     } else if(1500>char_level&&char_level>=1490){
-//       raid['koukusaton'][form_arr.length-1].classList.add('show')
-//       raid['hard'][form_arr.length-1].classList.add('show')
-//       raid['abrelshud12'][form_arr.length-1].classList.add('show')
-//     } else if(1520>char_level&&char_level>=1500){
-//       raid['koukusaton'][form_arr.length-1].classList.add('show')
-//       raid['hard'][form_arr.length-1].classList.add('show')
-//       raid['abrelshud14'][form_arr.length-1].classList.add('show')
-//     } else if(1540>char_level&&char_level>=1520){
-//       raid['koukusaton'][form_arr.length-1].classList.add('show')
-//       raid['hard'][form_arr.length-1].classList.add('show')
-//       raid['abrelshud16'][form_arr.length-1].classList.add('show')
-//     }else if(1540>char_level&&char_level>=1520){
-//       raid['koukusaton'][form_arr.length-1].classList.add('show')
-//       raid['hard'][form_arr.length-1].classList.add('show')
-//       raid['abrelshud16'][form_arr.length-1].classList.add('show')
-//     }else if(1550>char_level&&char_level>=1540){
-//       raid['koukusaton'][form_arr.length-1].classList.add('show')
-//       raid['hard'][form_arr.length-1].classList.add('show')
-//       raid['abrelshud_hard12'][form_arr.length-1].classList.add('show')
-//     }else if(1560>char_level&&char_level>=1550){
-//       raid['koukusaton'][form_arr.length-1].classList.add('show')
-//       raid['hard'][form_arr.length-1].classList.add('show')
-//       raid['abrelshud_hard14'][form_arr.length-1].classList.add('show')
-//     } else{
-//       raid['koukusaton'][form_arr.length-1].classList.add('show')
-//       raid['hard'][form_arr.length-1].classList.add('show')
-//       raid['abrelshud_hard16'][form_arr.length-1].classList.add('show')
-//     }
-//   }
-// });
+      //주간 컨텐츠
+      // if(1370>char_level&&char_level>=1325){
+      //   raid['oreha_hard'][form_arr.length-1].classList.add('show')
+      // } else if(1415>char_level&&char_level>=1370){
+      //   raid['oreha_hard'][form_arr.length-1].classList.add('show')
+      //   raid['argos'][form_arr.length-1].classList.add('show')
+      // } else if(1430>char_level&&char_level>=1415){
+      //   raid['argos'][form_arr.length-1].classList.add('show')
+      //   raid['baltan'][form_arr.length-1].classList.add('show')
+      // } else if(1445>char_level&&char_level>=1430){
+      //   raid['argos'][form_arr.length-1].classList.add('show')
+      //   raid['baltan'][form_arr.length-1].classList.add('show')
+      //   raid['biakiss'][form_arr.length-1].classList.add('show')
+      // } else if(1460>char_level&&char_level>=1445){
+      //   raid['argos'][form_arr.length-1].classList.add('show')
+      //   raid['baltan_hard'][form_arr.length-1].classList.add('show')
+      //   raid['biakiss'][form_arr.length-1].classList.add('show')
+      // } else if(1475>char_level&&char_level>=1460){
+      //   raid['argos'][form_arr.length-1].classList.add('show')
+      //   raid['baltan_hard'][form_arr.length-1].classList.add('show')
+      //   raid['biakiss_hard'][form_arr.length-1].classList.add('show')
+      // } else if(1490>char_level&&char_level>=1475){
+      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
+      //   raid['baltan_hard'][form_arr.length-1].classList.add('show')
+      //   raid['biakiss_hard'][form_arr.length-1].classList.add('show')
+      // } else if(1500>char_level&&char_level>=1490){
+      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
+      //   raid['hard'][form_arr.length-1].classList.add('show')
+      //   raid['abrelshud12'][form_arr.length-1].classList.add('show')
+      // } else if(1520>char_level&&char_level>=1500){
+      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
+      //   raid['hard'][form_arr.length-1].classList.add('show')
+      //   raid['abrelshud14'][form_arr.length-1].classList.add('show')
+      // } else if(1540>char_level&&char_level>=1520){
+      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
+      //   raid['hard'][form_arr.length-1].classList.add('show')
+      //   raid['abrelshud16'][form_arr.length-1].classList.add('show')
+      // }else if(1540>char_level&&char_level>=1520){
+      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
+      //   raid['hard'][form_arr.length-1].classList.add('show')
+      //   raid['abrelshud16'][form_arr.length-1].classList.add('show')
+      // }else if(1550>char_level&&char_level>=1540){
+      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
+      //   raid['hard'][form_arr.length-1].classList.add('show')
+      //   raid['abrelshud_hard12'][form_arr.length-1].classList.add('show')
+      // }else if(1560>char_level&&char_level>=1550){
+      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
+      //   raid['hard'][form_arr.length-1].classList.add('show')
+      //   raid['abrelshud_hard14'][form_arr.length-1].classList.add('show')
+      // } else{
+      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
+      //   raid['hard'][form_arr.length-1].classList.add('show')
+      //   raid['abrelshud_hard16'][form_arr.length-1].classList.add('show')
+      // }
 
 
 
 
 
-//일일 컨텐츠 
 
-var huge = {
-  kaos_huge : Array.from(document.getElementsByClassName('kaos_huge on')),
-  guardian_huge : Array.from(document.getElementsByClassName('guardian_huge on')),
-  quest_huge : Array.from(document.getElementsByClassName('quest_huge on'))
-};
+  // let oreha = Array.from(document.getElementsByClassName('oreha_con'))
+  // let oreha_hard = Array.from(document.getElementsByClassName('oreha_hard_con'))
+  
+  // let argos = Array.from(document.getElementsByClassName('argos_con'))
+  
+  // let baltan = Array.from(document.getElementsByClassName('baltan_con'))
+  // let baltan_hard = Array.from(document.getElementsByClassName('baltan_hard_con'))
+  
+  // let biakiss = Array.from(document.getElementsByClassName('biakiss_con'))
+  // let biakiss_hard = Array.from(document.getElementsByClassName('biakiss_hard_con'))
+  
+  // let hard = Array.from(document.getElementsByClassName('hard_con'))
+  
+  // let koukusaton = Array.from(document.getElementsByClassName('koukusaton_con'))
+  
+  // let abrelshud12 = Array.from(document.getElementsByClassName('abrelshud_con12'))
+  // let abrelshud_hard12 = Array.from(document.getElementsByClassName('abrelshud_hard_con12'))
+  
+  // let abrelshud14 = Array.from(document.getElementsByClassName('abrelshud_con14'))
+  // let abrelshud_hard14 = Array.from(document.getElementsByClassName('abrelshud_hard_con14'))
+  
+  // let abrelshud16 = Array.from(document.getElementsByClassName('abrelshud_con16'))
+  // let abrelshud_hard16 = Array.from(document.getElementsByClassName('abrelshud_hard_con16'))
 
-var day_con = Array.from(document.getElementsByClassName("day_con"));
+var char_info = document.querySelectorAll(".char_info");
 
-day_con.addEventListener("change",function(e){
+var day_con = document.querySelectorAll('.day_con');
+
+var week_con = document.querySelectorAll('.week_con');
+
+var kaosHuge = day_con[day_con.length-1].getElementsByClassName('kaos_huge on');
+var guardianHuge = day_con[day_con.length-1].getElementsByClassName('guardian_huge on');
+var questHuge = day_con[day_con.length-1].getElementsByClassName('quest_huge on');
+
+var char = [
+  {"level" : char_info[char_info.length-1],
+  "day" : day_con[day_con.length-1],
+  "week": week_con[week_con.length-1],
+  "kaos_huge" :Array.from(kaosHuge),
+  "guardian_huge" : Array.from(guardianHuge),
+  "quest_huge": Array.from(questHuge)
+  }];
+
+//일일 컨텐츠 이벤트
+
+  day_con[0].addEventListener("change",dayEvent)
+
+  function dayEvent(e){
     var fsel = e.target.value;
-    var sel = e.target.parentNode.nextElementSibling;
-    var sel_arr = Array.from(sel.getElementsByClassName("on"));
+    var sel = e.currentTarget;
+    var sel_arr = Array.from(sel.getElementsByClassName(fsel+" on"));
     var sel_arr_i = sel_arr[sel_arr.length-1];
-  if(e.target.checked){
-    sel_arr_i.classList.remove('on')
-  } else {
-    var sel_arr_i2= huge[fsel][sel_arr.length];
-    sel_arr_i2.classList.add('on')
+    var sel_arr_i2 = char[char.length-1][fsel][sel_arr.length];
+    if(e.target.checked){
+      sel_arr_i.classList.remove('on')
+    } else {
+      sel_arr_i2.classList.add('on')
+    }
   }
-});
+
+  char_info[0].addEventListener("click",charEvent);
+
+
+  function charEvent(e){
+    var levelValue=charInfo()
+  }
+  
+  
+  //캐릭정보 이벤트
+  
+  
+    function charInfo(e){
+      if(e.target.value=="캐릭터 정보 저장"){
+        var level_arr = Array.from(e.currentTarget.getElementsByClassName("char_level"));
+        var char_level_ipt = level_arr[level_arr.length-1];
+        var char_level = char_level_ipt.value;
+        var name_arr = Array.from(e.currentTarget.getElementsByClassName("char_name"));
+        var char_name_ipt = name_arr[name_arr.length-1];
+        var char_name = char_name_ipt.value;
+        var form_arr = Array.from(e.currentTarget.getElementsByClassName("name_level"));
+        var form = form_arr[form_arr.length-1]
+        let p = document.createElement('p');
+        let p2 = document.createElement('p');
+        form.remove();
+        p.innerHTML=char_level;
+        e.currentTarget.appendChild(p);
+        p2.innerHTML=char_name;
+        e.currentTarget.appendChild(p2);
+        return char_level;
+      }
+    };
+    
+
+//주간레이드
+function weekRaid() {
+  if(1325<=level<1415){
+
+  }
+}
 
 
 
 //캐릭터 추가 버튼
+
+
+var add_char = document.getElementById("add_char");
+
+add_char.addEventListener("click",btnClick);
+
+
+function btnClick(){
+  char.push(addRow())
+
+  char[char.length-1]['day'].addEventListener("change",dayEvent);
+  char[char.length-1]['level'].addEventListener("click",charInfo);
+}
+
 
 function addRow(){
   var char_table=document.getElementById("char");
@@ -225,7 +273,7 @@ function addRow(){
               
             </td>
             <td class="week_con" >
-              <span id="char_week">
+              <span class="char_week">
                 <div class="check_box">
 
                   <div class="oreha_hard_con">
@@ -329,6 +377,24 @@ function addRow(){
                 </div>
               </span>
             </td>
-  `
-  
+  `;
+  var char_info = document.querySelectorAll(".char_info");
+
+  var day_con = document.querySelectorAll('.day_con');
+
+  var week_con = document.querySelectorAll('.week_con');
+
+  var kaosHuge = day_con[day_con.length-1].getElementsByClassName('kaos_huge on');
+  var guardianHuge = day_con[day_con.length-1].getElementsByClassName('guardian_huge on');
+  var questHuge = day_con[day_con.length-1].getElementsByClassName('quest_huge on');
+  return {
+    "level" : char_info[char_info.length-1],
+    "day" : day_con[day_con.length-1],
+    "week": week_con[week_con.length-1],
+    "kaos_huge" :Array.from(kaosHuge),
+    "guardian_huge" : Array.from(guardianHuge),
+    "quest_huge": Array.from(questHuge),
+  }
 }
+
+char[char.length-1]['week'].getElementsByClassName('oreha_hard_con')[1]

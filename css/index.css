@@ -148,7 +148,7 @@ td.day_con>.kaos_con,.guardian_con,.quest_con{
   flex-wrap: wrap;
 }
 
-.week_con> #char_week>.check_box>.show{
+.week_con> .char_week>.check_box>.show{
   display: block;
 }
 
