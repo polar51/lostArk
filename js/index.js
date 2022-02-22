@@ -1,102 +1,6 @@
+const MAX_CHAR = 6;
 
 
-//레이드 객체
-
-// var raid =
-// {
-// }
-
-
-
-
-// 캐릭터 인포
-
-
-
-
-      //주간 컨텐츠
-      // if(1370>char_level&&char_level>=1325){
-      //   raid['oreha_hard'][form_arr.length-1].classList.add('show')
-      // } else if(1415>char_level&&char_level>=1370){
-      //   raid['oreha_hard'][form_arr.length-1].classList.add('show')
-      //   raid['argos'][form_arr.length-1].classList.add('show')
-      // } else if(1430>char_level&&char_level>=1415){
-      //   raid['argos'][form_arr.length-1].classList.add('show')
-      //   raid['baltan'][form_arr.length-1].classList.add('show')
-      // } else if(1445>char_level&&char_level>=1430){
-      //   raid['argos'][form_arr.length-1].classList.add('show')
-      //   raid['baltan'][form_arr.length-1].classList.add('show')
-      //   raid['biakiss'][form_arr.length-1].classList.add('show')
-      // } else if(1460>char_level&&char_level>=1445){
-      //   raid['argos'][form_arr.length-1].classList.add('show')
-      //   raid['baltan_hard'][form_arr.length-1].classList.add('show')
-      //   raid['biakiss'][form_arr.length-1].classList.add('show')
-      // } else if(1475>char_level&&char_level>=1460){
-      //   raid['argos'][form_arr.length-1].classList.add('show')
-      //   raid['baltan_hard'][form_arr.length-1].classList.add('show')
-      //   raid['biakiss_hard'][form_arr.length-1].classList.add('show')
-      // } else if(1490>char_level&&char_level>=1475){
-      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
-      //   raid['baltan_hard'][form_arr.length-1].classList.add('show')
-      //   raid['biakiss_hard'][form_arr.length-1].classList.add('show')
-      // } else if(1500>char_level&&char_level>=1490){
-      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
-      //   raid['hard'][form_arr.length-1].classList.add('show')
-      //   raid['abrelshud12'][form_arr.length-1].classList.add('show')
-      // } else if(1520>char_level&&char_level>=1500){
-      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
-      //   raid['hard'][form_arr.length-1].classList.add('show')
-      //   raid['abrelshud14'][form_arr.length-1].classList.add('show')
-      // } else if(1540>char_level&&char_level>=1520){
-      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
-      //   raid['hard'][form_arr.length-1].classList.add('show')
-      //   raid['abrelshud16'][form_arr.length-1].classList.add('show')
-      // }else if(1540>char_level&&char_level>=1520){
-      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
-      //   raid['hard'][form_arr.length-1].classList.add('show')
-      //   raid['abrelshud16'][form_arr.length-1].classList.add('show')
-      // }else if(1550>char_level&&char_level>=1540){
-      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
-      //   raid['hard'][form_arr.length-1].classList.add('show')
-      //   raid['abrelshud_hard12'][form_arr.length-1].classList.add('show')
-      // }else if(1560>char_level&&char_level>=1550){
-      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
-      //   raid['hard'][form_arr.length-1].classList.add('show')
-      //   raid['abrelshud_hard14'][form_arr.length-1].classList.add('show')
-      // } else{
-      //   raid['koukusaton'][form_arr.length-1].classList.add('show')
-      //   raid['hard'][form_arr.length-1].classList.add('show')
-      //   raid['abrelshud_hard16'][form_arr.length-1].classList.add('show')
-      // }
-
-
-
-
-
-
-  // let oreha = Array.from(document.getElementsByClassName('oreha_con'))
-  // let oreha_hard = Array.from(document.getElementsByClassName('oreha_hard_con'))
-  
-  // let argos = Array.from(document.getElementsByClassName('argos_con'))
-  
-  // let baltan = Array.from(document.getElementsByClassName('baltan_con'))
-  // let baltan_hard = Array.from(document.getElementsByClassName('baltan_hard_con'))
-  
-  // let biakiss = Array.from(document.getElementsByClassName('biakiss_con'))
-  // let biakiss_hard = Array.from(document.getElementsByClassName('biakiss_hard_con'))
-  
-  // let hard = Array.from(document.getElementsByClassName('hard_con'))
-  
-  // let koukusaton = Array.from(document.getElementsByClassName('koukusaton_con'))
-  
-  // let abrelshud12 = Array.from(document.getElementsByClassName('abrelshud_con12'))
-  // let abrelshud_hard12 = Array.from(document.getElementsByClassName('abrelshud_hard_con12'))
-  
-  // let abrelshud14 = Array.from(document.getElementsByClassName('abrelshud_con14'))
-  // let abrelshud_hard14 = Array.from(document.getElementsByClassName('abrelshud_hard_con14'))
-  
-  // let abrelshud16 = Array.from(document.getElementsByClassName('abrelshud_con16'))
-  // let abrelshud_hard16 = Array.from(document.getElementsByClassName('abrelshud_hard_con16'))
 
 var char_info = document.querySelectorAll(".char_info");
 
@@ -134,12 +38,14 @@ var char = [
     }
   }
 
-  char_info[0].addEventListener("click",charEvent);
+  char[char.length-1]['level'].addEventListener("click",charEvent);
 
-
-  function charEvent(e){
-    var levelValue=charInfo()
-  }
+    function charEvent(e){
+      var charInfo2 = charInfo(e);
+      char[char.length-1]['level'].addEventListener("click",weekRaid);
+      char[char.length-1]['level'].addEventListener("click",goldSumEvent);
+      char[char.length-1]['level'].addEventListener("click",charRecommend);
+    }
   
   
   //캐릭정보 이벤트
@@ -168,9 +74,111 @@ var char = [
     
 
 //주간레이드
-function weekRaid() {
-  if(1325<=level<1415){
+function weekRaid(e) {
 
+  if(e.target.value=="캐릭터 정보 저장"){
+    let level = e.currentTarget.getElementsByTagName('p')[0].textContent;
+    let selec = e.currentTarget;
+  if(1325<=level&&level<1415){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('oreha_hard_con')[0].classList.add('show')
+  };
+  if(1370<=level&&level<1475){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('argos_con')[0].classList.add('show')
+  };
+  if(1415<=level&&level<1445){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('baltan_con')[0].classList.add('show')
+  };
+  if(1430<=level&&level<1460){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('biakiss_con')[0].classList.add('show')
+  };
+  if(1445<=level&&level<1490){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('baltan_hard_con')[0].classList.add('show')
+  };
+  if(1460<=level&&level<1490){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('biakiss_hard_con')[0].classList.add('show')
+  };
+  if(1475<=level){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('koukusaton_con')[0].classList.add('show')
+  };
+  if(1490<=level){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('hard_con')[0].classList.add('show')
+  }
+  if(1490<=level&&level<1500){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('abrelshud_con12')[0].classList.add('show')
+  };
+  if(1500<=level&&level<1520){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('abrelshud_con14')[0].classList.add('show')
+  };
+  if(1520<=level&&level<1540){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('abrelshud_con16')[0].classList.add('show')
+  }
+  if(1540<=level&&level<1550){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('abrelshud_hard_con12')[0].classList.add('show')
+  };
+  if(1550<=level&&level<1560){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('abrelshud_hard_con14')[0].classList.add('show')
+  };
+  if(1560<level){
+    selec.nextElementSibling.nextElementSibling.getElementsByClassName('abrelshud_hard_con16')[0].classList.add('show')
+  };
+};
+}
+
+//골드관련이벤트
+function goldSumEvent(e){
+  if(e.target.value=="캐릭터 정보 저장"){
+    let selec=char[char.length-1]['week'].getElementsByClassName('show');
+    let gold = document.getElementById('gold_sum').textContent;
+    let getGold = goldSum(e)
+    document.getElementById('gold_sum').innerHTML = Number(gold)+Number(getGold);
+
+  }
+}
+
+
+
+function goldSum(e){
+  if(e.target.value=="캐릭터 정보 저장"){
+    let selec=char[char.length-1]['week'].getElementsByClassName('show');
+    let gold = document.getElementById('gold_sum').textContent;
+    let sum=0;
+    for(i=0;i<selec.length;i++){
+      let getGold = selec[i].getElementsByTagName('input')[0].value;
+      sum += Number(getGold);
+    }
+    return sum
+  }
+}
+
+
+//캐릭터 추천
+
+function charRecommend(e){
+  if(e.target.value=="캐릭터 정보 저장"){
+    let name = '';
+    let arr = [];
+    if(char.length<=MAX_CHAR){
+      for(i=0;char.length>i;i++){
+        let nameSum = char[i]['level'].getElementsByTagName('p')[1].textContent;
+        name += ' "'+nameSum+'" ';
+      };
+      } else {
+        for(i=0;char.length>i;i++){
+          arr.push({
+            charLevel : char[i]['level'].getElementsByTagName('p')[0].textContent,
+            charName : char[i]['level'].getElementsByTagName('p')[1].textContent
+          });
+        };
+        arr.sort(function(a,b){
+          return b['charLevel']-a['charLevel']
+        });
+        
+        for(i=0;i<MAX_CHAR;i++){
+          name+= ' "'+arr[i]['charName']+'" '
+        }
+      }
+
+    document.getElementById('gold_re_char').innerHTML = name;
   }
 }
 
@@ -188,7 +196,7 @@ function btnClick(){
   char.push(addRow())
 
   char[char.length-1]['day'].addEventListener("change",dayEvent);
-  char[char.length-1]['level'].addEventListener("click",charInfo);
+  char[char.length-1]['level'].addEventListener("click",charEvent);
 }
 
 
@@ -397,4 +405,3 @@ function addRow(){
   }
 }
 
-char[char.length-1]['week'].getElementsByClassName('oreha_hard_con')[1]
