@@ -1,3 +1,4 @@
+
 const MAX_CHAR = 6;
 
 
@@ -41,11 +42,14 @@ var char = [
   char[char.length-1]['level'].addEventListener("click",charEvent);
 
     function charEvent(e){
-      var charInfo2 = charInfo(e);
+      char[char.length-1]['level'].addEventListener("click",charInfo);
       char[char.length-1]['level'].addEventListener("click",weekRaid);
       char[char.length-1]['level'].addEventListener("click",goldSumEvent);
       char[char.length-1]['level'].addEventListener("click",charRecommend);
+      
+      
     }
+
   
   
   //캐릭정보 이벤트
@@ -68,6 +72,14 @@ var char = [
         e.currentTarget.appendChild(p);
         p2.innerHTML=char_name;
         e.currentTarget.appendChild(p2);
+        axios({
+          method: 'post',
+          url: 'http://localhost:3000/',
+          data: {
+            name: char_name,
+            level: char_level
+          }
+        })
         return char_level;
       }
     };
@@ -405,3 +417,11 @@ function addRow(){
   }
 }
 
+// axios({
+//   method: 'post',
+//   url: '/',
+//   data: {
+//     name: ,
+//     level:
+//   }
+// });
