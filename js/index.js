@@ -74,11 +74,15 @@ var char = [
         e.currentTarget.appendChild(p2);
         axios({
           method: 'post',
-          url: 'http://localhost:3000/',
+          url: 'http://localhost:3000/add',
           data: {
             name: char_name,
             level: char_level
           }
+        }).then(res =>{
+          console.log(res)
+        }).catch(err =>{
+          console.log(err)
         })
         return char_level;
       }

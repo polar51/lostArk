@@ -7,6 +7,7 @@
   <title>로아 숙제</title>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
 </head>
 <body>
   <header>
@@ -35,7 +36,7 @@
           <tbody>
             <tr class="char_tr">
               <td class="char_info">
-                <form method="post" action="http://localhost:3000/" name="name_level" class="name_level">
+                <form method="post" action="http://localhost:3000/add" name="name_level" class="name_level">
                   <fieldset>
                     <legend>캐릭터정보</legend>
                     <input type="number" min="0" max="1700" class="char_level" name="char_level" value="" placeholder="레벨" autocomplete="off">
@@ -211,6 +212,5 @@
     <p>polar51@naver.com</p>
   </footer>
   <script src="./js/index.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
 </body>
 </html>
