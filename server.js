@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const text = require('body-parser/lib/types/text');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb+srv://polar51:Kodo760386!@cluster0.wlduh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
@@ -40,7 +41,20 @@ app.post("/add",(req,res)=>{
 })
 
 
-
+app.get("/test",(req,res)=>{
+  MongoClient.connect(url, function(err, db){
+    if(err != null){
+      res.json({'count':0});
+    } else {
+      var dbo = db.db("lostArk");
+      dbo.collection("user").find({}).toArray(function(err,result){
+        if(err) throw err;
+        console.log(result);
+        db.close();
+      });
+    }
+  })
+})
 
 
 app.listen(3000);
